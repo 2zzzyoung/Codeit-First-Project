@@ -23,7 +23,6 @@ export default function Card({ question }) {
       <Answer />
       <S.CardFooter>
         <Reaction like={like} dislike={dislike} />
-        {/* like={like} dislike={dislike} */}
       </S.CardFooter>
     </S.FeedCardContainer>
   );

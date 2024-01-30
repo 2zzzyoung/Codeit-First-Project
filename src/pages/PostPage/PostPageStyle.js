@@ -119,7 +119,7 @@ export const ViewMoreButton = styled(FloatButton)`
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Pretendard;
   font-size: 1.5rem;
-  line-height: 2.5rem; /* 166.667% */
+  line-height: 2.5rem; 
 
   &:disabled {
     cursor: default;

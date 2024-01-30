@@ -43,7 +43,7 @@ const PostPage = () => {
         const subjectData = await getSubject(subjectId);
 
         if (!subjectData) {
-          navigate('/404'); // 사용자를 찾을 수 없음을 알리는 페이지로 이동합니다.
+          navigate('/404');
           return;
         }
         setSubject(subjectData);
@@ -54,17 +54,13 @@ const PostPage = () => {
           query.limit,
           query.offset,
         );
-        // "count": 0,  질문 개수
-        // "next": null,  다음 question 주소값..?
-        // "previous": null, 이전 question 주소값...?
-        // "results": []   질문들..
         setQuestionCount(count);
         setQuestionList(previous => [...previous, ...results]);
         setIsHasNext(results.length === LIMIT);
         setIsLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
-        navigate('/error'); // 데이터를 가져오는 중에 오류가 발생한 경우 오류 페이지로 이동합니다.
+        navigate('/error'); 
       }
     };
 
@@ -111,7 +107,6 @@ const PostPage = () => {
                   question={question}
                   index={index}
                   subject={subject}
-                  // 필요한 props를 전달합니다.
                 />
               ))}
               {isHasNext && (
@@ -129,7 +124,6 @@ const PostPage = () => {
             </S.NoQuestionImageContainer>
           )}
         </S.QuestionListContainer>
-        {/* ModalFloatButton 추가 */}
         <S.ModalFloatButton
           className="question-write-button"
           type="button"

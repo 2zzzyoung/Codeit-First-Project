@@ -47,7 +47,6 @@ export default function Modal({ closeModal, userData }) {
           },
         },
       );
-      // console.log(subjectId)
 
       if (response.status === 201) {
         window.location.reload(true);

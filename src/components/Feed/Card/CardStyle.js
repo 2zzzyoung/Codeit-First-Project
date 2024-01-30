@@ -47,7 +47,7 @@ export const CardCreatedDateAndQuestion = styled.div`
     font-family: Actor;
     font-size: 18px;
     font-weight: 400;
-    line-height: 24px; /* 133.333% */
+    line-height: 24px; 
   }
 `;
 
