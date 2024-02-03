@@ -11,7 +11,7 @@ export default function Main() {
   const weatherInfo = useRecoilValue(weatherState);
   const backgroundImage = weatherInfo.weather
     ? `${process.env.PUBLIC_URL}/images/${weatherInfo.weather}.jpg`
-    : `${process.env.PUBLIC_URL}/images/MainPageBackground.png`;
+    : `${process.env.PUBLIC_URL}/images/Background.jpeg`;
 
   return (
     <S.MainPageContainer backgroundImage={backgroundImage}>
