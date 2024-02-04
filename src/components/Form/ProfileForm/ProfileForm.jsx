@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import FillBoxButton from '../../Button/FillBoxButton/FillBoxButton';
 import * as S from './ProfileFormStyle';
 
-export const ProfileForm = ({ userId, userName }) => {
+export const ProfileForm = ({ userId, userName, setActiveForm }) => {
   const navigate = useNavigate();
 
   const handleAnswerButtonClick = () => {
@@ -12,7 +12,7 @@ export const ProfileForm = ({ userId, userName }) => {
   const handleLogoutButtonClick = () => {
     window.sessionStorage.removeItem('userId');
     window.sessionStorage.removeItem('userName');
-    window.location.reload();
+    setActiveForm('AuthToggle');
   };
 
   return (
