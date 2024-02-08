@@ -4,6 +4,7 @@ import TextArea from '../../components/Input/TextArea';
 import axios from 'axios';
 import { useState } from 'react';
 import FillBoxButton from '../../components/Button/FillBoxButton/FillBoxButton';
+import Fireworks from './Confetti.tsx';
 
 export default function Modal({ closeModal, userData }) {
   const { name, imageSource, id } = userData;
@@ -61,6 +62,19 @@ export default function Modal({ closeModal, userData }) {
 
   return createPortal(
     <S.ModalContainer onClick={onClick}>
+      <canvas id="canvas"></canvas>
+      <style>
+        {`
+                canvas {
+                    z-index: 10;
+                    pointer-events: none;
+                    position: fixed;
+                    top: 0;
+                    transform: scale(1.1);
+                }
+                `}
+      </style>
+      <Fireworks></Fireworks>
       <S.ModalContents>
         <S.ModalHeader>
           <S.ModalHeaderTitleBox>
